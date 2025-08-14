@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <img id="luz" src="pic_bulboff.gif" style="width:100px;">
+        <button onclick="acenderLuz()">Acender luz</button>
+        <button onclick="apagarLuz()">Apagar luz</button>
+
+        <script>
+            function acenderLuz() {
+                document.getElementById("luz").src = "pic_bulbon.gif";
+            }
+            function apagarLuz() {
+                document.getElementById("luz").src = "pic_bulboff.gif";
+            }
+        </script>
+    </body>
+
+</html>
