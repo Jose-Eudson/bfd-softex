@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var nome = prompt("Qual o seu nome?");
+            alert("Bem-vindo, " + nome);
+
+            var num = prompt("Digite um número:");
+            num = parseInt(num);
+
+            var pares = "";
+            for (var i = 0; i <= num; i++) {
+                if (i % 2 === 0) {
+                    pares += i + " ";
+                }
+            }
+
+            alert("Os números pares menores ou iguais a " + num + " são: " + pares);
+        </script>
+    </body>
+</html>

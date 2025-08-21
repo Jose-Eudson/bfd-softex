@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <input type="number" id="idade" placeholder="Digite sua idade">
+        <input type="text" id="origem" placeholder="Digite sua cidade">
+
+
+        <button onclick="adicionarPessoa()"> Adicionar </button>
+        <button onclick="contar()"> Contar pessoas </button>
+        <p id ="info"></p>
+        
+        <script>
+            var pessoa = [];
+            function adicionarPessoa() {
+                var nome = document.getElementById("nome").value;
+                var idade = document.getElementById("idade").value;
+                var origem = document.getElementById("origem").value;
+
+                var novaPessoa = {
+                    nome: nome,
+                    idade: idade,
+                    origem: origem
+                };
+
+                pessoa.push(novaPessoa);
+
+                document.getElementById("nome").value = "";
+                document.getElementById("idade").value = "";
+                document.getElementById("origem").value = "";
+                document.getElementById("info").innerHTML =  nome + " foi adicionado.";
+            }
+            function contar() {
+                var textoLista = "<ul>";
+                pessoa.forEach(concatenador);
+                function concatenador(value) {
+                    textoLista += "<li>" + value.nome + ", " + value.idade + " anos, " + value.origem + "</li>";
+                }
+                textoLista += "</ul>";
+                document.getElementById("info").innerHTML =
+                "o total de pessoas na lista é: " + 
+                pessoa.length + 
+                textoLista;
+            }
+
+        </script>
+        
+    </body>
+</html>

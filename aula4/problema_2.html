@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Digite números positivos</title>
+</head>
+<body>
+    <h1>Digite números positivos</h1>
+    <button id="iniciarBtn">Iniciar</button>
+
+    <script>
+        document.getElementById('iniciarBtn').onclick = function() {
+            var quantidade = 0;
+            var soma = 0;
+            var numero;
+
+            do {
+                numero = parseFloat(prompt("Digite um número positivo (zero ou negativo para parar):"));
+                if (numero > 0) {
+                    quantidade++;
+                    soma += numero;
+                }
+            } while (numero > 0);
+
+            var media = quantidade > 0 ? (soma / quantidade) : 0;
+
+            alert(
+                `Quantidade de números digitados: ${quantidade}\n` +
+                `Soma dos valores: ${soma}\n` +
+                `Média: ${media.toFixed(2)}`
+            );
+        };
+    </script>
+</body>
+</html>
