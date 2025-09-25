@@ -1,0 +1,29 @@
+@import 'variaveis';
+@import 'mixins';
+.menu {
+  background-color: $primary;
+  padding: 10px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 15px;
+
+      a {
+        @extend %base-style;
+        color: white;
+        padding: 5px 10px;
+
+        &:hover {
+          color: $secondary;
+          border-bottom: 2px solid $secondary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 40px;
+}
+
+$cor-principal: #ffffff;     
+$cor-destaque-tech: #007bff;   
+$cor-destaque-design: #ffc107; 
+$cor-destaque-marketing: #28a745; 
+$espaçamento: 24px;       
+
+@mixin card-estilizado($raio, $sombra, $cor) {
+    border-radius: $raio;
+    box-shadow: $sombra;
+    border-top: 5px solid $cor;
+    cursor: pointer;
+}
+
+%titulo-card {
+    font-size: 1.5rem; 
+    font-weight: 600;  
+    text-align: center; 
+    margin-bottom: 16px;
+    color: #1a253c;
+}
+
+%texto-card {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5a6479;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $espaçamento;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .card {
+        background-color: $cor-principal;
+        padding: $espaçamento;
+        transition: all 0.3s ease-in-out;
+
+        @include card-estilizado(
+            10px,                           
+            0 4px 15px rgba(0,0,0,0.1),     
+            #ddd                            
+        );
+
+        h2 {
+            @extend %titulo-card;
+        }
+
+        p {
+            @extend %texto-card;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+        }
+    }
+
+    .card--tech {
+        @include card-estilizado(10px, 0 4px 15px rgba(0,0,0,0.1), $cor-destaque-tech);
+    }
+    .card--design {
+        @include card-estilizado(10px, 0 4px 15px rgba(0,0,0,0.1), $cor-destaque-design);
+    }
+    .card--marketing {
+        @include card-estilizado(10px, 0 4px 15px rgba(0,0,0,0.1), $cor-destaque-marketing);
+    }
+}

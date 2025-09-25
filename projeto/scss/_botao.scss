@@ -1,0 +1,14 @@
+@import 'variaveis';
+@import 'mixins';
+.btn {
+  @extend %base-style;
+  background: $secondary; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  @include custom-box(10px);
+
+  &:hover {
+    background: darken($secondary, 10%); 
+  }
+}

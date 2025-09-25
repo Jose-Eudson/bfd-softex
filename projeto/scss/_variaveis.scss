@@ -1,0 +1,11 @@
+$primary: #2c3e50;
+$secondary: #27ae60;
+$font-size: 16px;
+
+%base-style {
+  font-family: Arial, sans-serif;
+  font-size: $font-size;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

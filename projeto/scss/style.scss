@@ -1,0 +1,11 @@
+// scss/style.scss
+
+// 1. PRIMEIRO: importe as definições (variáveis, placeholders)
+@import 'variaveis';
+
+// 2. SEGUNDO: importe os mixins
+@import 'mixins';
+
+// 3. POR ÚLTIMO: importe os componentes que usam tudo o que foi definido acima
+@import 'menu';
+@import 'botao';
