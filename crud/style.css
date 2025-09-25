@@ -1,0 +1,132 @@
+body {
+    background: linear-gradient(120deg, #84f7ff 0%, #e097f3 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #fcfcfc;
+    margin-top: 40px;
+    margin-bottom: 24px;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);
+}
+
+form {
+    background: rgba(255,255,255,0.95);
+    padding: 24px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    font-size: 1em;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    background: #e3f2fd;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border: 1.5px solid #1976d2;
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.05em;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+    outline: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]:hover, button[type="submit"]:focus {
+    background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.22);
+}
+
+#student-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 480px;
+    width: 100%;
+}
+
+#student-list li {
+    background: #fff;
+    margin-bottom: 16px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    font-size: 1.08em;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#student-list li:hover {
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.18);
+    transform: scale(1.02);
+}
+
+#student-list li div {
+    display: flex;
+    gap: 8px;
+}
+
+.edit, .delete {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.98em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    font-weight: 500;
+}
+
+.edit {
+    background: #eee7ff;
+    color: #672dfb;
+    box-shadow: 0 2px 8px rgba(117, 45, 251, 0.08);
+}
+
+.edit:hover, .edit:focus {
+    background: #d5c4ff;
+    color: #6f25f9;
+    transform: scale(1.08);
+}
+
+.delete {
+    background: #ffebee;
+    color: #d32f2f;
+    box-shadow: 0 2px 8px rgba(211, 47, 47, 0.08);
+}
+
+.delete:hover, .delete:focus {
+    background: #ffcdd2;
+    color: #b71c1c;
+    transform: scale(1.08);
+}

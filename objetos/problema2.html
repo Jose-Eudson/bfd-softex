@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Manipulação de Strings</h1>
+    </head>
+    <body>
+        <p>Palavra 1: <input type= text id = "text1" placeholder="Digite Aqui">
+        <p>Palavra 2: <input type= text id = "text2" placeholder="Digite Aqui"> <br><br>
+        <button type = "button" onclick="analisarPalavras()"> Analisar Palavras </button>
+        <p id = "resultado"></p>
+        <p id = "concat"></p>
+        <p id = "slice"></p>
+        <p id = "indexof"></p>
+        <p id = "maiusculo"></p>
+        <p id = "minusculo"></p>
+        <p id = "replace"></p>
+        <p id = "at"></p>
+        <p id = "inverter"></p>
+        <p id = "compare"></p>
+
+    </body>
+    <script>
+        function analisarPalavras (){
+            let palavra1 = document.getElementById("text1").value;
+            let palavra2 = document.getElementById("text2").value;
+            let tamanho1 = palavra1.length;
+            let tamanho2 = palavra2.length;
+            document.getElementById("resultado").textContent = `Tamanho da Palavra 1: ${tamanho1} | Tamanho da Palavra 2: ${tamanho2} `
+
+            let concat = palavra1.concat("", palavra2);
+            document.getElementById("concat").textContent = `Concatenação: ${concat}`;
+
+            let slice = palavra1.slice(0, -5);
+            let slice2 = palavra2.slice(0, -5);
+            document.getElementById("slice").textContent = `Slice da Palavra 1: ${slice} | Slice da Palavra 2: ${slice2}`;
+
+            let index = palavra1.indexOf("s");
+            document.getElementById("indexof").textContent = `IndexOf('s'): ${index}`;
+
+
+            let maiusculo = palavra1.toUpperCase();
+            document.getElementById("maiusculo").textContent = `Maiúsculo (palavra1): ${maiusculo}`
+
+            let minusculo = palavra2.toLocaleLowerCase();
+            document.getElementById("minusculo").textContent = `Minúsculo (palavra2): ${minusculo}`;
+
+            let replace = palavra1.replace("a", "@");
+            document.getElementById("replace").textContent = `Replace (a --> @) ${replace}`
+
+            let at = palavra1.at(2);
+            document.getElementById("at").textContent = `at(2): ${at}`;
+
+            let inverter = palavra1.split('').reverse().join('');
+            document.getElementById("inverter").textContent = `Palavra 1 Invertida: ${inverter}`
+
+            let faltando = '';
+            for (let letra of palavra1) {
+                if (!palavra2.includes(letra) && !faltando.includes(letra)) {
+                    faltando += letra;
+                }
+            }
+            document.getElementById("compare").textContent = 
+                faltando ? `Letras da palavra 1 que faltam na palavra 2: ${faltando}` 
+                        : `Todas as letras de palavra 1 estão em palavra 2`;
+            
+
+        }
+
+
+    </script> 
+
+
+
+</html>

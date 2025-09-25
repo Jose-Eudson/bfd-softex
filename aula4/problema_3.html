@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <input type="text" id="fruta" placeholder="Digite uma fruta">
+        <button onclick="adicionarFruta()"> Adicionar </button>
+        <button onclick="contar()"> Contar frutas </button>
+        <p id ="info"></p>
+        
+        <script>
+            var frutas = [];
+            function adicionarFruta() {
+                var nomeFrutaAdicionada = document.getElementById("fruta").value;
+                frutas.push(nomeFrutaAdicionada);
+                document.getElementById("fruta").value = "";
+                document.getElementById("info").innerHTML = "Fruta " + nomeFrutaAdicionada + " adicionada." ;
+            }
+            function contar() {
+                var textoLista = "<ul>";
+                frutas.forEach(concatenador);
+                function concatenador(value) {
+                    textoLista += "<li>" + value + "</li>";
+                }
+                textoLista += "</ul>";
+                document.getElementById("info").innerHTML =
+                "o total de frutas na lista é: " + 
+                frutas.length + 
+                textoLista;
+            }
+
+        </script>
+        
+    </body>
+
+
+</html>
