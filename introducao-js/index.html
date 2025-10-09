@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <script>
+    //exercício 1:
+    const meuNome = "Eudson Cordeiro,";
+    const minhaIdade = "21 anos,";
+    const gostoDeProgramar = "Sim.";
+
+    alert(
+      meuNome + " " + minhaIdade + " Gosta de programar? " + gostoDeProgramar
+    );
+
+    //exercício 2:
+    var primeiroNumero = prompt("digite o primeiro número:");
+    primeiroNumero = parseFloat(primeiroNumero);
+
+    var segundoNumero = prompt("digite o segundo número:");
+    segundoNumero = parseFloat(segundoNumero);
+
+    var soma = primeiroNumero + segundoNumero;
+    alert(soma);
+
+    //exercicio 3
+    let idade = prompt("Digite sua idade: ");
+
+    if (idade >= 18) {
+      alert("Você pode dirigir!");
+    } else {
+      alert("Você não pode dirigir!");
+    }
+
+    //exericio 4
+    let numeros = "";
+
+    for (let i = 1; i <= 20; i++) {
+      numeros += i + "\n";
+    }
+
+    alert(numeros);
+
+    //exercicio 5
+    let numero = parseInt(prompt("Digite um número para ver a tabuada:"));
+
+    let i = 1;
+
+    let resultado = "Tabuada do " + numero + ":\n\n";
+
+    while (i <= 10) {
+      resultado += numero + " x " + i + " = " + numero * i + "\n";
+      i++;
+    }
+
+    alert(resultado);
+
+    //exercicio 6
+    function dobro(numero) {
+      return numero * 2;
+    }
+
+    const number = Number(prompt("Digite um número:"));
+    const result = dobro(number);
+
+    alert("O dobro de " + number + " é " + result);
+
+    //exercicio 7
+    const amigos = ["Ana", "Bruno", "Carlos", "Diana", "Eduardo"];
+
+    let mensagem = "Meus amigos:\n";
+
+    for (let i = 0; i < amigos.length; i++) {
+      mensagem += i + 1 + ". " + amigos[i] + "\n";
+    }
+
+    alert(mensagem);
+
+    //exercicio 8
+    const carro = {
+      marca: "Toyota",
+      modelo: "Corolla",
+      ano: 2022,
+    };
+
+    const informacao =
+      "Marca: " +
+      carro.marca +
+      "\n" +
+      "Modelo: " +
+      carro.modelo +
+      "\n" +
+      "Ano: " +
+      carro.ano;
+
+    alert(informacao);
+
+    
+  </script>
+</html>
