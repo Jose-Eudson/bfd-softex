@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercícios Intermediários de JavaScript</title>
+  <link rel="stylesheet" href="../nivel_3/style.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h2>Contador</h2>
+    <button onclick="alterarContador(-1)">-1</button>
+    <span id="contador-valor">0</span>
+    <button onclick="alterarContador(1)">+1</button>
+  </div>
+
+  <div class="card">
+    <h2>Validação de Formulário</h2>
+    <form id="meu-form" onsubmit="return validarFormulario()">
+      <label>
+        Nome:
+        <input type="text" id="nome" />
+      </label>
+      <br /><br />
+      <label>
+        E-mail:
+        <input type="email" id="email" />
+      </label>
+      <br /><br />
+      <button type="submit">Enviar</button>
+      <span id="erro-form" class="erro"></span>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Troca de Cor do Fundo</h2>
+    <button onclick="trocarCorFundo()">Mudar cor do fundo</button>
+  </div>
+
+  <div class="card">
+    <h2>Lista Dinâmica</h2>
+    <input id="item-lista" type="text" placeholder="Novo item" />
+    <button onclick="adicionarItemLista()">Adicionar</button>
+    <ul id="lista-ul"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

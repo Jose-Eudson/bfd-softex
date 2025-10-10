@@ -1,0 +1,84 @@
+@charset "UTF-8";
+body {
+  background: #f0f4f8;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* Botão usando mixin */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+.btn {
+  display: block;
+  margin: 32px auto;
+}
+
+/* Menu de navegação com aninhamento */
+.nav {
+  background: hsl(210, 36.3636363636%, 100.6862745098%);
+  padding: 12px 0;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.nav ul li {
+  margin: 0 18px;
+}
+.nav ul li a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+.nav ul li a:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+/* Extends para alertas */
+.alerta, .alerta-erro, .alerta-sucesso {
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 24px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.alerta-sucesso {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alerta-erro {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/*# sourceMappingURL=style.css.map */

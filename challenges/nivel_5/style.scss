@@ -1,0 +1,159 @@
+@use "sass:color";
+
+$cor-primaria: #3498db;
+$cor-secundaria: #2ecc71;
+$cor-erro: #e74c3c;
+$cor-sucesso: #27ae60;
+$cor-fundo: #f4f8fb;
+$bordas-arredondadas: 12px;
+
+@mixin btn {
+  background: $cor-primaria;
+  color: #fff;
+  border: none;
+  border-radius: $bordas-arredondadas;
+  padding: 12px 24px;
+  font-size: 1em;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: color.adjust($cor-primaria, $lightness: -10%);
+  }
+}
+
+body {
+  background: $cor-fundo;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #222;
+}
+
+h1, h2 {
+  text-align: center;
+  color: $cor-primaria;
+}
+
+.dashboard {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: #fff;
+    border-radius: $bordas-arredondadas;
+    padding: 24px 32px;
+    box-shadow: 0 3px 16px rgba(0,0,0,0.10);
+    min-width: 180px;
+    text-align: center;
+    .card-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .card-value {
+      font-size: 2em;
+      color: $cor-secundaria;
+    }
+  }
+  .btn {
+    @include btn;
+    display: block;
+    margin: 0 auto 40px;
+  }
+}
+
+.jogo-section {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: $bordas-arredondadas;
+  box-shadow: 0 2px 12px #0001;
+  text-align: center;
+
+  #jogo-msg {
+    margin: 15px 0;
+    font-size: 1.2em;
+  }
+  
+  input[type="number"] {
+    padding: 8px 12px;
+    border-radius: $bordas-arredondadas;
+    border: 2px solid #bcd;
+    font-size: 1.1em;
+    outline: none;
+  }
+
+  .btn {
+    @include btn;
+    min-width: 110px;
+    margin: 10px;
+  }
+}
+
+.form-section {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: $bordas-arredondadas;
+  box-shadow: 0 2px 12px #0001;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      padding: 10px;
+      border-radius: $bordas-arredondadas;
+      border: 2px solid #bcd;
+      font-size: 1em;
+      transition: border-color 0.3s, background-color 0.3s;
+      outline: none;
+
+      &.valido {
+        border-color: $cor-sucesso;
+        background-color: color.adjust($cor-sucesso, $lightness: 45%);
+      }
+      &.invalido {
+        border-color: $cor-erro;
+        background-color: color.adjust($cor-erro, $lightness: 45%);
+      }
+    }
+    button {
+      @include btn;
+      margin-top: 12px;
+    }
+  }
+  #mensagem-form {
+    margin-top: 12px;
+    text-align: center;
+  }
+}
+
+.alerta {
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: $bordas-arredondadas;
+  margin-top: 12px;
+  font-size: 1em;
+  text-align: center;
+}
+.sucesso {
+  @extend .alerta;
+  background-color: color.adjust($cor-sucesso, $lightness: 70%);
+  color: $cor-sucesso;
+  border: 1px solid color.adjust($cor-sucesso, $lightness: 30%);
+}
+.erro {
+  @extend .alerta;
+  background-color: color.adjust($cor-erro, $lightness: 70%);
+  color: $cor-erro;
+  border: 1px solid color.adjust($cor-erro, $lightness: 30%);
+}
